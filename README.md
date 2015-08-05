@@ -31,7 +31,7 @@ First you need to use `pgsql = require('luapgsql')` to import a table named `pgs
 
 * `result:recordlist()`
 
-    - Returns an iteration closure function which can be used in the `for ... in ...` form. `nil` is returned if error occurs. Each record returned by the iterator function is an array containing values corresponding to the fieldname list which is the result of `result:fieldnamelist()`.
+    - Returns an iteration closure function which can be used in the `for ... in` form. `nil` is returned if error occurs. Each record returned by the iterator function is an array containing values corresponding to the fieldname list which is the result of `result:fieldnamelist()`.
 
 See `luapgsql-demo.lua` for more details.
 

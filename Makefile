@@ -1,9 +1,9 @@
 CC := gcc
 
-ifeq ($(release), y)
-    CFLAGS := -O2 -DNDEBUG
-else
+ifeq ($(debug), y)
     CFLAGS := -g
+else
+    CFLAGS := -O2 -DNDEBUG
 endif
 
 CFLAGS := $(CFLAGS) -Wl,-E -Wall -Werror -fPIC
