@@ -277,7 +277,7 @@ static int l_pgsqlresult_fieldnamelist(lua_State* l)
 }
 
 /* return the number of record(s), or nil if fails. */
-static int l_pgsqlresult_count(lua_State* l)
+static int l_pgsqlresult_size(lua_State* l)
 {
     PGresult** result = luaL_testudata(l, 1, PGSQLRESULT);
 
@@ -357,7 +357,7 @@ static const struct luaL_Reg pgsqlclient_m[] = {
 };
 
 static const struct luaL_Reg pgsqlresult_lib[] = {
-    {"count", l_pgsqlresult_count},
+    {"size", l_pgsqlresult_size},
     {"fieldnamelist", l_pgsqlresult_fieldnamelist},
     {"recordlist", l_pgsqlresult_recordlist},
     {"__gc", l_pgsqlresult_gc},

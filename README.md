@@ -21,7 +21,7 @@ First you need to use `pgsql = require('luapgsql')` to import a table named `pgs
 
     - Executes a SQL statement `sqlstr`. If successfully executed, a `result` containing all information, and a `nil` for `errmsg`, are returned; otherwise the `result` will be `nil`, and the error message `errmsg` tells what happened.
 
-* `count = result:count()`
+* `size = result:size()`
 
     - Returns the number of record(s) in the `result`. `nil` is returned if error occurs.
 
