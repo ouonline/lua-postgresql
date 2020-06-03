@@ -11,7 +11,7 @@ CFLAGS := $(CFLAGS) -Wl,-E -Wall -Werror -fPIC
 LUADIR := $(HOME)/workspace/lua
 
 INCLUDE := -I$(LUADIR)/src -I/usr/include/postgresql
-LIBS := -ldl -L$(LUADIR)/src -llua -lm -lpq
+LIBS := -L$(LUADIR)/src -llua -lm -lpq -ldl
 
 TARGET := luapgsql luapgsql.so
 

@@ -17,7 +17,7 @@ First you need to use `pgsql = require('luapgsql')` to import a table named `pgs
 
     - Sets the default character set to be `charset` for the current connection. `nil` is returned if successfully executed, otherwise an error message `errmsg` is returned.
 
-* `result, errmsg = client:query(sqlstr)`
+* `result, errmsg = client:execute(sqlstr)`
 
     - Executes a SQL statement `sqlstr`. If successfully executed, a `result` containing all information, and a `nil` for `errmsg`, are returned; otherwise the `result` will be `nil`, and the error message `errmsg` tells what happened.
 
@@ -53,7 +53,7 @@ FAQ
 
   which means you need to re-compile Lua with extra arguments to enable loading dynamic libraries. For example, in Linux systems:
 
-    > $ make posix MYCFLAGS=-DLUA\_USE\_DLOPEN MYLIBS=-ldl
+    > $ make posix MYCFLAGS="-DLUA_USE_DLOPEN -fPIC" MYLIBS=-ldl
 
 * If there is an error message like this:
 

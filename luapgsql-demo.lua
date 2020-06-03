@@ -29,9 +29,9 @@ if errmsg ~= nil then
     return
 end
 
-result, errmsg = client:query("select * from test")
+result, errmsg = client:execute("select * from test")
 if errmsg ~= nil then
-    io.write("query error: ", errmsg, "\n")
+    io.write("execute error: ", errmsg, "\n")
     return
 end
 

@@ -198,7 +198,7 @@ static int l_pgsqlclient_setcharset(lua_State* l)
 }
 
 /* return the result set and the error message */
-static int l_pgsqlclient_query(lua_State* l)
+static int l_pgsqlclient_execute(lua_State* l)
 {
     PGSQL* pg;
     PGresult** result;
@@ -351,7 +351,7 @@ static const struct luaL_Reg pgsqlclient_f[] = {
 static const struct luaL_Reg pgsqlclient_m[] = {
     {"ping", l_pgsqlclient_ping},
     {"setcharset", l_pgsqlclient_setcharset},
-    {"query", l_pgsqlclient_query},
+    {"execute", l_pgsqlclient_execute},
     {"__gc", l_pgsqlclient_gc},
     {NULL, NULL},
 };
