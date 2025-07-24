@@ -8,7 +8,9 @@ endif
 
 CFLAGS := $(CFLAGS) -Wl,-E -Wall -Werror -fPIC
 
-LUADIR := $(HOME)/workspace/lua
+ifndef LUADIR
+    $(error environment variable 'LUADIR' is not set)
+endif
 
 INCLUDE := -I$(LUADIR)/src -I/usr/include/postgresql
 LIBS := -L$(LUADIR)/src -llua -lm -lpq -ldl
@@ -32,5 +34,4 @@ deps:
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
-	$(MAKE) clean -C $(LUADIR)
 	rm -f $(TARGET) *.o
