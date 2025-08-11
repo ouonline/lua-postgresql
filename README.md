@@ -1,5 +1,20 @@
 `lua-pgsql` is a PostgreSQL client for Lua. It is compatible with Lua 5.2.3(or above) and based on the [PostgreSQL C API](http://www.postgresql.org/docs/9.1/static/libpq.html).
 
+Build
+=====
+
+install Lua from repo and then
+
+```bash
+make
+````
+
+or use the environment variable `LUADIR` to specify the Lua source you want to use
+
+```bash
+LUADIR=/path/to/lua make
+```
+
 Lua APIs
 ========
 
